@@ -1,0 +1,30 @@
+Basic Gameplay:
+  ✔ Create a grid @done(21-08-08 14:07)
+  ✔ Make the snake wrap inside the grid @done(21-08-08 14:07)
+  ✔ Make apple spawn inside the grid randomly @done(21-08-08 16:09)
+  ✔ Spawn new apple when snake eats it @done(21-08-10 14:02)
+  ✔ Make the snake grow when eating an apple @done(21-08-10 16:19)
+    ✔ Create SnakeBody GameObject @done(21-08-10 14:38)
+    ✔ Create SnakeBody behind SnakeHead @started(21-08-10 14:41) @done(21-08-10 14:41) @lasted(28s)
+    ✔ Make SnakeBody move behind last position @done(21-08-10 14:46)
+    ✔ Create SnakeBody behind SnakeBody @done(21-08-10 16:19)
+  ✔ Make SnakeBody follow previous snake part @done(21-08-10 16:19)
+  ✔ Keep track of snake positions and spawn apple where there is an empty space @done(21-08-10 17:01)
+  ✔ Stop game when SnakeHead hit SnakeBody @done(21-08-11 14:09)
+  ✔ Pause game one space bar down @started(21-08-11 10:12) @done(21-08-11 14:09) @lasted(3h57m14s)
+  ☐ Save score to local DB
+    ☐ Ask player name on game over
+    ☐ Save to DB
+
+Basic UI:
+  ✔ Show score @started(21-08-11 08:44) @done(21-08-11 10:11) @lasted(1h27m45s)
+  ✔ Pause screen @done(21-08-11 14:09)
+  ☐ Create start menu scene
+    ☐ Start new game
+    ☐ Quit game
+    ☐ See previous scores
+    ☐ Design UI
+  ☐ Create Game Over scene
+    ✔ Basic scene with Game Over text and score @done(21-08-11 14:09)
+    ✔ Add buttons to retry or navigate to menu @done(21-08-15 23:45)
+    ☐ Navigate to main menu from Game Over scene
