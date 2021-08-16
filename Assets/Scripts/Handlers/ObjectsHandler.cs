@@ -20,6 +20,9 @@ public class ObjectsHandler : MonoBehaviour
     [HideInInspector]
     public GameObject gameOverHandler;
 
+    [HideInInspector]
+    public GameObject mainMenuHandler;
+
     void Awake() {
         if (instance == null) instance = this;
     }

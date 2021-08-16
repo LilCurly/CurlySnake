@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MenuButton : MyButton<GameOverHandler>
+public class QuitButton : MyButton<MainMenuHandler>
 {
+
     public override void Awake()
     {
-        base.SetUiHandler(ObjectsHandler.instance.gameOverHandler.GetComponent<GameOverHandler>());
+        base.SetUiHandler(ObjectsHandler.instance.mainMenuHandler.GetComponent<MainMenuHandler>());
         base.Awake();
     }
 
     public override void OnSubmit(BaseEventData eventData)
     {
-        Debug.Log("Did tap return to main menu");
+        Debug.Log("Quit button");
     }
 }
