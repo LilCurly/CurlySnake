@@ -14,6 +14,6 @@ public class QuitButton : MyButton<MainMenuHandler>
 
     public override void OnSubmit(BaseEventData eventData)
     {
-        Debug.Log("Quit button");
+        Application.Quit();
     }
 }
