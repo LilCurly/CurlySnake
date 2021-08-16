@@ -13,6 +13,6 @@ public class NewGameButton : MyButton<MainMenuHandler>
 
     public override void OnSubmit(BaseEventData eventData)
     {
-        Debug.Log("New game button");
+        SceneHandler.instance.LoadInGameScenes();
     }
 }

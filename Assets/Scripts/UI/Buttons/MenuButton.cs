@@ -13,6 +13,6 @@ public class MenuButton : MyButton<GameOverHandler>
 
     public override void OnSubmit(BaseEventData eventData)
     {
-        Debug.Log("Did tap return to main menu");
+        SceneHandler.instance.LoadMainMenuScene();
     }
 }

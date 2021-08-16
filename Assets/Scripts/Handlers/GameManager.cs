@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     }
 
     public static GameManager instance;
-
-    public GameObject objectsHandler;
     public GameObject mainCamera;
 
     [HideInInspector]
@@ -47,6 +45,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if (instance == null) instance = this;
+        Time.timeScale = 1;
         boardManager = GetComponent<BoardManager>();
         scoreLabel = GameObject.Find("MyCanvas/ScoreValue").GetComponent<Text>();
         InstantiateObjects();
@@ -61,7 +60,6 @@ public class GameManager : MonoBehaviour
 
     protected void InstantiateObjects() {
         Instantiate(mainCamera, transform);
-        Instantiate(objectsHandler, transform);
     }
 
     protected void InstantiateBoardVariables() {

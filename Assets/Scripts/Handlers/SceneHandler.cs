@@ -10,12 +10,16 @@ public class SceneHandler : MonoBehaviour
     void Awake() {
         if (instance == null) instance = this;
         DontDestroyOnLoad(this);
-        LoadInGameScenes();
+        LoadMainMenuScene();
     }
 
     public void LoadInGameScenes() {
         SceneManager.LoadSceneAsync("SampleScene");
         SceneManager.LoadSceneAsync("PauseScene", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync("GameOverScene", LoadSceneMode.Additive);
+    }
+
+    public void LoadMainMenuScene() {
+        SceneManager.LoadSceneAsync("MainMenuScene");
     }
 }
