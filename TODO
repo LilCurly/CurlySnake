@@ -12,19 +12,24 @@ Basic Gameplay:
   ✔ Keep track of snake positions and spawn apple where there is an empty space @done(21-08-10 17:01)
   ✔ Stop game when SnakeHead hit SnakeBody @done(21-08-11 14:09)
   ✔ Pause game one space bar down @started(21-08-11 10:12) @done(21-08-11 14:09) @lasted(3h57m14s)
-  ☐ Save score to local DB
+  ☐ Save score to local persistent storage
     ☐ Ask player name on game over
-    ☐ Save to DB
+    ☐ Save to local persistent storage
 
 Basic UI:
   ✔ Show score @started(21-08-11 08:44) @done(21-08-11 10:11) @lasted(1h27m45s)
   ✔ Pause screen @done(21-08-11 14:09)
   ☐ Create start menu scene
-    ☐ Start new game
-    ☐ Quit game
+    ✔ Start new game @done(21-08-17 00:03)
+    ✔ Quit game @done(21-08-17 00:03)
     ☐ See previous scores
-    ☐ Design UI
-  ☐ Create Game Over scene
+    ✔ Design UI @done(21-08-17 00:04)
+    ☐ New logo
+  ✔ Create Game Over scene @done(21-08-17 00:03)
     ✔ Basic scene with Game Over text and score @done(21-08-11 14:09)
     ✔ Add buttons to retry or navigate to menu @done(21-08-15 23:45)
-    ☐ Navigate to main menu from Game Over scene
+    ✔ Navigate to main menu from Game Over scene @done(21-08-17 00:03)
+  ☐ Save score scene
+    ☐ Show current game score
+    ☐ Register user input to save name
+    ☐ Open Game Over scene on score saved
