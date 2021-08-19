@@ -13,7 +13,7 @@ Basic Gameplay:
   ✔ Stop game when SnakeHead hit SnakeBody @done(21-08-11 14:09)
   ✔ Pause game one space bar down @started(21-08-11 10:12) @done(21-08-11 14:09) @lasted(3h57m14s)
   ☐ Save score to local persistent storage
-    ☐ Ask player name on game over
+    ✔ Ask player name on game over @done(21-08-19 23:43)
     ☐ Save to local persistent storage
 
 Basic UI:
@@ -29,7 +29,11 @@ Basic UI:
     ✔ Basic scene with Game Over text and score @done(21-08-11 14:09)
     ✔ Add buttons to retry or navigate to menu @done(21-08-15 23:45)
     ✔ Navigate to main menu from Game Over scene @done(21-08-17 00:03)
-  ☐ Save score scene
-    ☐ Show current game score
-    ☐ Register user input to save name
-    ☐ Open Game Over scene on score saved
+  ✔ Save score scene @done(21-08-19 23:43) (Has been wrapped inside Game Over scene)
+    ✔ Show current game score @done(21-08-19 23:43)
+    ✔ Register user input to save name @done(21-08-19 23:43)
+    ✔ Open Game Over scene on score saved @done(21-08-19 23:43)
+  ☐ Create previous scores scene
+    ☐ Retrieve scores from local persistent storage
+    ☐ Create a line score component
+    ☐ Addind lines to a scrollable verical view
