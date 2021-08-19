@@ -5,21 +5,18 @@ using UnityEngine;
 public class PauseHandler : MonoBehaviour
 {
 
+    public static PauseHandler instance;
+
     void Awake() {
-        Debug.Log("TEST");
-        ObjectsHandler.instance.pauseHandler = gameObject;
+        if (instance == null) instance = this;
+        HideScene();
+    }
+
+    public void StartScene() {
+        gameObject.SetActive(true);
+    }
+
+    public void HideScene() {
         gameObject.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

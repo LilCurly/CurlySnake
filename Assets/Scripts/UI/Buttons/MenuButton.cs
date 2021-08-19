@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MenuButton : MyButton<GameOverHandler>
+public class MenuButton : MyButton
 {
     public override void Awake()
     {
-        base.SetUiHandler(ObjectsHandler.instance.gameOverHandler.GetComponent<GameOverHandler>());
+        GameOverHandler.instance.mainMenuButton = gameObject;
         base.Awake();
     }
 
-    public override void OnSubmit(BaseEventData eventData)
+    public override void PlayerDidSubmit()
     {
         SceneHandler.instance.LoadMainMenuScene();
     }

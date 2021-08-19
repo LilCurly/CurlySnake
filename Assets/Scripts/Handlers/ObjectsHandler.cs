@@ -11,18 +11,6 @@ public class ObjectsHandler : MonoBehaviour
     public GameObject apple;
     public GameObject snakeBody;
 
-    [HideInInspector]
-    public Transform mCanvas;
-
-    [HideInInspector]
-    public GameObject pauseHandler;
-
-    [HideInInspector]
-    public GameObject gameOverHandler;
-
-    [HideInInspector]
-    public GameObject mainMenuHandler;
-
     void Awake() {
         if (instance == null) instance = this;
     }

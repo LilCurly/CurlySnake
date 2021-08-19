@@ -89,19 +89,19 @@ public class GameManager : MonoBehaviour
     protected void PauseGame() {
         Time.timeScale = 0;
         gameState = GameState.Pause;
-        ObjectsHandler.instance.pauseHandler.SetActive(true);
+        PauseHandler.instance.StartScene();
     }
 
     protected void ResumeGame() {
         Time.timeScale = 1;
         gameState = GameState.InPlay;
-        ObjectsHandler.instance.pauseHandler.SetActive(false);
+        PauseHandler.instance.HideScene();
     }
 
     public void GameOver() {
         Time.timeScale = 0;
         gameState = GameState.GameOver;
-        ObjectsHandler.instance.gameOverHandler.SetActive(true);
+        GameOverHandler.instance.StartScene();
     }
 
     public void Retry() {
@@ -111,7 +111,6 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            //if (pauseHandler == null) pauseHandler = GameObject.Find("PauseHandler");
             if (gameState == GameState.InPlay) {
                 PauseGame();
             } else if (gameState == GameState.Pause) {

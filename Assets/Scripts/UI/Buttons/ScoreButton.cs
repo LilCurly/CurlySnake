@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ScoreButton : MyButton<MainMenuHandler>
+public class ScoreButton : MyButton
 {
-    public override void Awake()
-    {
-        base.SetUiHandler(ObjectsHandler.instance.mainMenuHandler.GetComponent<MainMenuHandler>());
-        base.Awake();
-    }
-
-    public override void OnSubmit(BaseEventData eventData)
+    public override void PlayerDidSubmit()
     {
         Debug.Log("Score button");
     }

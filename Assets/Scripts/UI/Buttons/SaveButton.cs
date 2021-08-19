@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class RetryButton : MyButton
+public class SaveButton : MyButton
 {
     public override void Awake()
     {
-        GameOverHandler.instance.retryButton = gameObject;
+        GameOverHandler.instance.saveButton = gameObject;
         base.Awake();
     }
-    
+
     public override void PlayerDidSubmit()
     {
-        GameManager.instance.Retry();
+        GameOverHandler.instance.SavePlayerScore();
     }
 }

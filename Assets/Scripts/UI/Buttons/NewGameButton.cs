@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class NewGameButton : MyButton<MainMenuHandler>
+public class NewGameButton : MyButton
 {
-    public override void Awake()
-    {
-        base.SetUiHandler(ObjectsHandler.instance.mainMenuHandler.GetComponent<MainMenuHandler>());
-        base.Awake();
-    }
-
-    public override void OnSubmit(BaseEventData eventData)
+    public override void PlayerDidSubmit()
     {
         SceneHandler.instance.LoadInGameScenes();
     }
