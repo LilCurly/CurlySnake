@@ -30,7 +30,8 @@ public class GameOverHandler : MonoBehaviour
     }
 
     public void SavePlayerScore() {
-        Debug.Log(currentPlayerName);
+        Score playerScore = new Score(currentPlayerName, GameManager.instance.score.ToString());
+        SaveHandler.SaveScore(playerScore);
         SetMenuState();
     }
 

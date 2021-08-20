@@ -7,6 +7,6 @@ public class ScoreButton : MyButton
 {
     public override void PlayerDidSubmit()
     {
-        Debug.Log("Score button");
+        SceneHandler.instance.LoadScoresScene();
     }
 }
