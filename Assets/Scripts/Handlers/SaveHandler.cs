@@ -42,6 +42,6 @@ public static class SaveHandler
     }
 
     private static string GetScorePath() {
-        return Application.persistentDataPath + "/" + "scores.bin";
+        return Application.persistentDataPath + "/scores.bin";
     }
 }

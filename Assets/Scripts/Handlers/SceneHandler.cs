@@ -24,7 +24,7 @@ public class SceneHandler : MonoBehaviour
     }
 
     public void LoadScoresScene() {
-        Debug.Log("Loading scores scene...");
+        /*Debug.Log("Loading scores scene...");
         ScoreContainer scores = SaveHandler.LoadScore();
         if (scores == null) {
             Debug.Log("No scores file found");
@@ -37,6 +37,7 @@ public class SceneHandler : MonoBehaviour
                 });
             }
         }
-        Debug.Log("Scores scene loaded!");
+        Debug.Log("Scores scene loaded!");*/
+        SceneManager.LoadSceneAsync("ScoresScene");
     }
 }
