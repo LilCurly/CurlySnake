@@ -32,8 +32,15 @@ Basic UI:
     ✔ Show current game score @done(21-08-19 23:43)
     ✔ Register user input to save name @done(21-08-19 23:43)
     ✔ Open Game Over scene on score saved @done(21-08-19 23:43)
-  ☐ Create previous scores scene
+  ✔ Create previous scores scene @done(21-08-24 00:24)
     ✔ Retrieve scores from local persistent storage @done(21-08-21 02:09)
     ✔ Create a line score component @done(21-08-21 02:09)
     ✔ Addind lines to a scrollable verical view @done(21-08-21 02:09)
-    ☐ Button to go back to main screen
+    ✔ Button to go back to main screen @done(21-08-24 00:24)
+
+  Design:
+    ☐ Snake design
+      ☐ Design head
+      ☐ Design bodies
+    ☐ Terrain design
+      ☐ Create some terrain tilemaps
