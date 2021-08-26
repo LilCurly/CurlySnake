@@ -265,7 +265,7 @@ MonoBehaviour:
   snake: []
   score: 0
   gameState: 0
-  scale: 1
+  scale: 2
   speed: 0.1
 --- !u!4 &324865391
 Transform:

@@ -44,3 +44,9 @@ Basic UI:
       ☐ Design bodies
     ☐ Terrain design
       ☐ Create some terrain tilemaps
+
+  Improvements:
+    ☐ Playable grid should take as mush space as it can
+      ☐ Find a way to get the same number of cell for every screen size
+        ☐ Analyze
+        ☐ Implement it

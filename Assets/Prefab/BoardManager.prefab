@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6ac824824b446289cc99c5acd53433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsHandler: {fileID: 0}
   mainCamera: {fileID: 0}
   boardManager: {fileID: 0}
   boardSize: 0
@@ -52,7 +51,8 @@ MonoBehaviour:
   maxPos: 0
   snake: []
   score: 0
-  scale: 0.5
+  gameState: 0
+  scale: 1
   speed: 1
 --- !u!114 &6179173908672079587
 MonoBehaviour:

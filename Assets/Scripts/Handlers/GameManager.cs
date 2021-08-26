@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     protected void InstantiateBoardVariables() {
         Camera cameraCompenent = mainCamera.GetComponent<Camera>();
         boardSize = cameraCompenent.orthographicSize % 2 == 0 ? (int) cameraCompenent.orthographicSize + 1 : (int) cameraCompenent.orthographicSize;
-
+        boardSize *= 2;
         maxPos = (boardSize - 1) / 2;
         minPos = -maxPos;
     }
