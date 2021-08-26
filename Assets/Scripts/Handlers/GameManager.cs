@@ -15,13 +15,18 @@ public class GameManager : MonoBehaviour
     }
 
     public static GameManager instance;
-    public GameObject mainCamera;
+
+    public int _boardSize = 10;
+
+    public GameObject _floor;
+    public Sprite[] _floorSprites;
+
+    [HideInInspector]
+    public List<Position> positions;
 
     [HideInInspector]
     public BoardManager boardManager;
 
-    [HideInInspector]
-    public int boardSize;
     [HideInInspector]
     public int minPos;
     [HideInInspector]
@@ -39,7 +44,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameState gameState;
 
-    public float scale = 1f;
     public float speed = 0.1f;
 
     void Awake()
@@ -48,7 +52,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         boardManager = GetComponent<BoardManager>();
         scoreLabel = GameObject.Find("MyCanvas/ScoreValue").GetComponent<Text>();
-        InstantiateObjects();
         InstantiateBoardVariables();
         InitGame();
         gameState = GameState.InPlay;
@@ -58,16 +61,33 @@ public class GameManager : MonoBehaviour
         boardManager.SetupScene();
     }
 
-    protected void InstantiateObjects() {
-        Instantiate(mainCamera, transform);
-    }
-
     protected void InstantiateBoardVariables() {
-        Camera cameraCompenent = mainCamera.GetComponent<Camera>();
-        boardSize = cameraCompenent.orthographicSize % 2 == 0 ? (int) cameraCompenent.orthographicSize + 1 : (int) cameraCompenent.orthographicSize;
-        boardSize *= 2;
-        maxPos = (boardSize - 1) / 2;
+        if (_boardSize % 2 == 0) {
+            _boardSize += 1;
+        }
+
+        if (Screen.orientation == ScreenOrientation.Landscape) {
+            // I want the board to be based on screen height
+            Camera.main.orthographicSize = _boardSize / 2;
+        } else {
+            // I want the board to be based on screen width
+            float aspectRatio = Screen.width / Screen.height;
+            Camera.main.orthographicSize = (_boardSize / aspectRatio) / 2;
+        }
+
+        maxPos = ((_boardSize - 1) / 2);
         minPos = -maxPos;
+
+        positions = new List<Position>();
+
+        for (int row = minPos; row <= maxPos; row++) {
+            for (int col = minPos; col <= maxPos; col++) {
+                GameObject instantiatedFloor = Instantiate(_floor, new Vector3(row, col, 0), Quaternion.identity, transform);
+                instantiatedFloor.GetComponent<SpriteRenderer>().sprite = _floorSprites[Random.Range(0, _floorSprites.Length)];
+
+                positions.Add(new Position(row, col));
+            }
+        }
     }
 
     public void AddSnakePart(GameObject snakePart) {

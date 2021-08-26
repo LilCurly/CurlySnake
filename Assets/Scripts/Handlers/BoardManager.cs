@@ -9,10 +9,7 @@ public class BoardManager : MonoBehaviour
 
     public void SetupScene() {
         CreateGrid();
-
-        GameObject background = Instantiate(ObjectsHandler.instance.background, new Vector3(0, 0, 0), Quaternion.identity, transform);
-        background.transform.localScale = new Vector3(GameManager.instance.boardSize, GameManager.instance.boardSize, 0);
-
+        
         Vector3 baseSnakePosition = new Vector3(0, 0, 0);
         GameObject snakeHead = Instantiate(ObjectsHandler.instance.snakeHead, baseSnakePosition, Quaternion.identity, transform);
         GameManager.instance.AddSnakePart(snakeHead);

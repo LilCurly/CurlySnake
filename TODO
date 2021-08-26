@@ -46,7 +46,7 @@ Basic UI:
       ☐ Create some terrain tilemaps
 
   Improvements:
-    ☐ Playable grid should take as mush space as it can
-      ☐ Find a way to get the same number of cell for every screen size
-        ☐ Analyze
-        ☐ Implement it
+    ✔ Playable grid should take as mush space as it can @done(21-08-26 19:12)
+      ✔ Find a way to get the same number of cell for every screen size @done(21-08-26 19:12)
+        ✔ Analyze @done(21-08-26 19:12)
+        ✔ Implement it @done(21-08-26 19:12)
