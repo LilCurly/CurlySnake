@@ -41,7 +41,26 @@ Basic UI:
   Design:
     ☐ Snake design
       ☐ Design head
+        ☐ Head direction top
+        ☐ Head direction left
+        ☐ Head direction right
+        ☐ Head direction bottom
       ☐ Design bodies
+        ☐ Body variant 1
+          ☐ Direction top
+          ☐ Direction left
+          ☐ Direction right
+          ☐ Direction bottom
+        ☐ Body variant 2
+          ☐ Direction top
+          ☐ Direction left
+          ☐ Direction right
+          ☐ Direction bottom
+        ☐ Tail
+          ☐ Direction top
+          ☐ Direction left
+          ☐ Direction right
+          ☐ Direction bottom
     ☐ Terrain design
       ☐ Create some terrain tilemaps
 
@@ -50,3 +69,4 @@ Basic UI:
       ✔ Find a way to get the same number of cell for every screen size @done(21-08-26 19:12)
         ✔ Analyze @done(21-08-26 19:12)
         ✔ Implement it @done(21-08-26 19:12)
+    ☐ Use only one dictionary to keep track of positions / taken space

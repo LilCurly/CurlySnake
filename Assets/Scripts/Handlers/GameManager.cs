@@ -16,21 +16,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public int _boardSize = 10;
-
-    public GameObject _floor;
-    public Sprite[] _floorSprites;
-
-    [HideInInspector]
-    public List<Position> positions;
-
     [HideInInspector]
     public BoardManager boardManager;
-
-    [HideInInspector]
-    public int minPos;
-    [HideInInspector]
-    public int maxPos;
 
     [HideInInspector]
     public List<GameObject> snake;
@@ -52,42 +39,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         boardManager = GetComponent<BoardManager>();
         scoreLabel = GameObject.Find("MyCanvas/ScoreValue").GetComponent<Text>();
-        InstantiateBoardVariables();
         InitGame();
         gameState = GameState.InPlay;
     }
 
     protected void InitGame() {
         boardManager.SetupScene();
-    }
-
-    protected void InstantiateBoardVariables() {
-        if (_boardSize % 2 == 0) {
-            _boardSize += 1;
-        }
-
-        if (Screen.orientation == ScreenOrientation.Landscape) {
-            // I want the board to be based on screen height
-            Camera.main.orthographicSize = _boardSize / 2;
-        } else {
-            // I want the board to be based on screen width
-            float aspectRatio = Screen.width / Screen.height;
-            Camera.main.orthographicSize = (_boardSize / aspectRatio) / 2;
-        }
-
-        maxPos = ((_boardSize - 1) / 2);
-        minPos = -maxPos;
-
-        positions = new List<Position>();
-
-        for (int row = minPos; row <= maxPos; row++) {
-            for (int col = minPos; col <= maxPos; col++) {
-                GameObject instantiatedFloor = Instantiate(_floor, new Vector3(row, col, 0), Quaternion.identity, transform);
-                instantiatedFloor.GetComponent<SpriteRenderer>().sprite = _floorSprites[Random.Range(0, _floorSprites.Length)];
-
-                positions.Add(new Position(row, col));
-            }
-        }
     }
 
     public void AddSnakePart(GameObject snakePart) {
@@ -102,7 +59,7 @@ public class GameManager : MonoBehaviour
         boardManager.SpawnApple();
     }
 
-    public void SnakePartDidMove(Vector3 from, Vector3 to) {
+    public void SnakePartDidMove(Position from, Position to) {
         boardManager.UpdateGrid(from, to);
     }
 

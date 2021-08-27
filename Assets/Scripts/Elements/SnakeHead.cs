@@ -38,13 +38,13 @@ public class SnakeHead : MonoBehaviour
     protected void MakeMovement() {
         Vector3 nextPosition = transform.position + lastRecordedMovementAxis;
 
-        if (nextPosition.x > GameManager.instance.maxPos) {
+        if (nextPosition.x > GameManager.instance.boardManager.maxPos) {
             nextPosition.x = (nextPosition.x - 1) * -1;
-        } else if (nextPosition.x < GameManager.instance.minPos) {
+        } else if (nextPosition.x < GameManager.instance.boardManager.minPos) {
             nextPosition.x = (nextPosition.x + 1) * -1;
-        } else if (nextPosition.y > GameManager.instance.maxPos) {
+        } else if (nextPosition.y > GameManager.instance.boardManager.maxPos) {
             nextPosition.y = (nextPosition.y - 1) * -1;
-        } else if (nextPosition.y < GameManager.instance.minPos) {
+        } else if (nextPosition.y < GameManager.instance.boardManager.minPos) {
             nextPosition.y = (nextPosition.y + 1) * -1;
         }
 
@@ -52,7 +52,7 @@ public class SnakeHead : MonoBehaviour
         transform.position = nextPosition;
         currentIllegalMovement = lastRecordedMovementAxis * -1;
 
-        GameManager.instance.SnakePartDidMove(lastPosition, transform.position);
+        GameManager.instance.SnakePartDidMove(new Position(lastPosition), new Position(transform.position));
 
         if (nextBodyPart != null) {
             nextBodyPart.MoveTo(lastPosition);

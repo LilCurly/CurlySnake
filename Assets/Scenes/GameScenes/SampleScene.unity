@@ -245,6 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ff77c18189a4147b39388ff6238e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _boardSize: 10
+  _floor: {fileID: 1316212786797972229, guid: 72315953c72384dbf8a8e9e1e5542e14, type: 3}
+  _floorSprites:
+  - {fileID: 21300000, guid: 547b657ad019843c1919cf25a58d521f, type: 3}
+  - {fileID: 21300000, guid: cbc2795c9710e40c38c9cafc59e59196, type: 3}
+  - {fileID: 21300000, guid: 316f61f7f4b5a490c9cd0503e1f16f5f, type: 3}
+  minPos: 0
+  maxPos: 0
 --- !u!114 &324865390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,18 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6ac824824b446289cc99c5acd53433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boardSize: 10
-  _floor: {fileID: 1316212786797972229, guid: 72315953c72384dbf8a8e9e1e5542e14, type: 3}
-  _floorSprites:
-  - {fileID: 21300000, guid: f9a721204a2f44c068315f91636f2958, type: 3}
-  - {fileID: 21300000, guid: c765bd536bbac4b7499f5d57268b478a, type: 3}
-  - {fileID: 21300000, guid: 734441e0907e24e56b870bbd6f20360b, type: 3}
-  - {fileID: 21300000, guid: 5e0bba5e3e34f42d191bbb26d3c4ba44, type: 3}
-  - {fileID: 21300000, guid: 8559b8a664f03485788bb81f6b94ae30, type: 3}
-  - {fileID: 21300000, guid: edb1e1f2fe29a4d439c33b34ea904ed9, type: 3}
   boardManager: {fileID: 0}
-  minPos: 0
-  maxPos: 0
   snake: []
   score: 0
   gameState: 0

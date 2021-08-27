@@ -14,7 +14,7 @@ public class SnakeBody : MonoBehaviour
         lastPosition = transform.position;
         transform.position = position;
 
-        GameManager.instance.SnakePartDidMove(lastPosition, transform.position);
+        GameManager.instance.SnakePartDidMove(new Position(lastPosition), new Position(transform.position));
 
         if (nextBodyPart != null) {
             nextBodyPart.MoveTo(lastPosition);

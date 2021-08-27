@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Position
 {
-    public int row;
-    public int col;
+    public Vector3 position;
 
     public Position(int row, int col) {
-        this.row = row;
-        this.col = col;
+        this.position = new Vector3(row, col, 0);
+    }
+
+    public Position(Vector3 vector) {
+        this.position = vector;
     }
 }

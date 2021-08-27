@@ -5,38 +5,68 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-    Dictionary<Vector3, bool> gridPositions;
+    public int _boardSize = 10;
+
+    public GameObject _floor;
+    public Sprite[] _floorSprites;
+
+    [HideInInspector]
+    public Dictionary<Position, bool> positions;
+
+    [HideInInspector]
+    public int minPos;
+    [HideInInspector]
+    public int maxPos;
 
     public void SetupScene() {
         CreateGrid();
-        
+
         Vector3 baseSnakePosition = new Vector3(0, 0, 0);
         GameObject snakeHead = Instantiate(ObjectsHandler.instance.snakeHead, baseSnakePosition, Quaternion.identity, transform);
         GameManager.instance.AddSnakePart(snakeHead);
 
-        gridPositions[baseSnakePosition] = true;
+        positions[new Position(baseSnakePosition)] = true;
 
         SpawnApple();
     }
 
     public void CreateGrid() {
-        gridPositions = new Dictionary<Vector3, bool>();
+        if (_boardSize % 2 == 0) {
+            _boardSize += 1;
+        }
 
-        for (int i = GameManager.instance.minPos; i <= GameManager.instance.maxPos; i++) {
-            for (int j = GameManager.instance.minPos; j <= GameManager.instance.maxPos; j++) {
-                gridPositions.Add(new Vector3(i, j, 0), false);
+        if (Screen.orientation == ScreenOrientation.Landscape) {
+            // I want the board to be based on screen height
+            Camera.main.orthographicSize = _boardSize / 2;
+        } else {
+            // I want the board to be based on screen width
+            float aspectRatio = Screen.width / Screen.height;
+            Camera.main.orthographicSize = (_boardSize / aspectRatio) / 2;
+        }
+
+        maxPos = ((_boardSize - 1) / 2);
+        minPos = -maxPos;
+
+        positions = new Dictionary<Position, bool>();
+
+        for (int row = minPos; row <= maxPos; row++) {
+            for (int col = minPos; col <= maxPos; col++) {
+                GameObject instantiatedFloor = Instantiate(_floor, new Vector3(row, col, 0), Quaternion.identity, transform);
+                instantiatedFloor.GetComponent<SpriteRenderer>().sprite = _floorSprites[Random.Range(0, _floorSprites.Length)];
+
+                positions.Add(new Position(row, col), false);
             }
         }
     }
 
-    public void UpdateGrid(Vector3 from, Vector3 to) {
-        gridPositions[from] = false;
-        gridPositions[to] = true;
+    public void UpdateGrid(Position from, Position to) {
+        positions[from] = false;
+        positions[to] = true;
     }
 
     public void SpawnApple() {
-        List<Vector3> validPositions = gridPositions.Where(element => element.Value == false).Select(element => element.Key).ToList<Vector3>();
-        Vector3 applePosition = validPositions[UnityEngine.Random.Range(0, validPositions.Count - 1)];
-        Instantiate(ObjectsHandler.instance.apple, applePosition, Quaternion.identity, transform);
+        List<Position> validPositions = positions.Where(element => element.Value == false).Select(element => element.Key).ToList<Position>();
+        Position applePosition = validPositions[Random.Range(0, validPositions.Count)];
+        Instantiate(ObjectsHandler.instance.apple, applePosition.position, Quaternion.identity, transform);
     }
 }
