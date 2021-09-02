@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08211469b87f24cb6a2c21db2af6316a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _snakeTop: {fileID: 21300000, guid: c4376d7785b594a649bab77d21a44247, type: 3}
+  _snakeBottom: {fileID: 21300000, guid: 54a87898bc4924565bb28d2421940698, type: 3}
+  _snakeLeft: {fileID: 21300000, guid: 6c5fefdeccbde41bd848656ae45c63ea, type: 3}
+  _snakeRight: {fileID: 21300000, guid: af8c4193273b34266a39278a429de90d, type: 3}
 --- !u!212 &6492864031721594130
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,7 +90,7 @@ SpriteRenderer:
   m_SortingLayerID: -1432692601
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 50d9e123faa594c689d01dafcfade807, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4376d7785b594a649bab77d21a44247, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

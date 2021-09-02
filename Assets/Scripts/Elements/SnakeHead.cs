@@ -8,6 +8,11 @@ public class SnakeHead : MonoBehaviour
     Vector3 currentIllegalMovement = new Vector3(-1, 0, 0);
     Vector3 lastPosition = new Vector3(0, 0, 0);
 
+    public Sprite _snakeTop;
+    public Sprite _snakeBottom;
+    public Sprite _snakeLeft;
+    public Sprite _snakeRight;
+
     [HideInInspector]
     SnakeBody nextBodyPart;
 
@@ -53,6 +58,17 @@ public class SnakeHead : MonoBehaviour
         currentIllegalMovement = lastRecordedMovementAxis * -1;
 
         GameManager.instance.SnakePartDidMove(new Position(lastPosition), new Position(transform.position));
+
+        SpriteRenderer spriteRender = GetComponent<SpriteRenderer>();
+        if (lastRecordedMovementAxis == Vector3.up) {
+             spriteRender.sprite = _snakeTop;
+        } else if (lastRecordedMovementAxis == Vector3.down) {
+            spriteRender.sprite = _snakeBottom;
+        } else if (lastRecordedMovementAxis == Vector3.left) {
+            spriteRender.sprite = _snakeLeft;
+        } else if (lastRecordedMovementAxis == Vector3.right) {
+            spriteRender.sprite = _snakeRight;
+        }
 
         if (nextBodyPart != null) {
             nextBodyPart.MoveTo(lastPosition);

@@ -49,12 +49,16 @@ public class BoardManager : MonoBehaviour
 
         positions = new Dictionary<Position, bool>();
 
-        for (int row = minPos; row <= maxPos; row++) {
-            for (int col = minPos; col <= maxPos; col++) {
-                GameObject instantiatedFloor = Instantiate(_floor, new Vector3(row, col, 0), Quaternion.identity, transform);
-                instantiatedFloor.GetComponent<SpriteRenderer>().sprite = _floorSprites[Random.Range(0, _floorSprites.Length)];
+        int count = 0;
+        for (int row = maxPos; row >= minPos; row--) {
+            for (int col = maxPos; col >= minPos; col--) {
+                Vector3 position = new Vector3(row, col, 0);
+                GameObject instantiatedFloor = Instantiate(_floor, position, Quaternion.identity, transform);
+                SpriteRenderer spriteRenderer = instantiatedFloor.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = _floorSprites[Random.Range(0, _floorSprites.Length)];
+                spriteRenderer.sortingOrder = count++;
 
-                positions.Add(new Position(row, col), false);
+                positions.Add(new Position(position), false);
             }
         }
     }
