@@ -146,3 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snakeBodyRight: {fileID: 21300000, guid: 0b1bb61f587e4490b89d508fe5b1be53, type: 3}
   _snakeBodyLeft: {fileID: 21300000, guid: 4f4b51c3b599b4d56b0fa8731c004679, type: 3}
+  _snakeBodyTop: {fileID: 21300000, guid: d5c7cc25bc11849328a72578734b556d, type: 3}
+  _snakeBodyBottom: {fileID: 21300000, guid: 0af61256fbf834506a7555b81bab090e, type: 3}
+  _cornerTopRightSprite: {fileID: 21300000, guid: 84c139b73be8c424bb61b6836fabc6cd, type: 3}
+  _cornerTopLeftSprite: {fileID: 21300000, guid: 618da9c2afbcd47478d6547522919dfc, type: 3}
+  _cornerBottomLeftSprite: {fileID: 21300000, guid: d1c8bd6cd1d52451eb5cc0e11d3afcad, type: 3}
+  _cornerBottomRightSprite: {fileID: 21300000, guid: 39bbdcfcb2dd74482a8ceb6a4ed5ff82, type: 3}

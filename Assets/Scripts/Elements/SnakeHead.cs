@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SnakeHead : MonoBehaviour
 {
+
+    public enum SnakeOrientation {
+        Horizontal,
+        Vertical
+    }
+
     Vector3 lastRecordedMovementAxis = new Vector3(1, 0, 0);
     Vector3 currentIllegalMovement = new Vector3(-1, 0, 0);
     Vector3 lastPosition = new Vector3(0, 0, 0);
@@ -13,8 +19,9 @@ public class SnakeHead : MonoBehaviour
     public Sprite _snakeLeft;
     public Sprite _snakeRight;
 
-    [HideInInspector]
     SnakeBody nextBodyPart;
+
+    SnakeOrientation currentHeadOrientation;
 
     // Start is called before the first frame update
     void Start()
@@ -60,19 +67,34 @@ public class SnakeHead : MonoBehaviour
         GameManager.instance.SnakePartDidMove(new Position(lastPosition), new Position(transform.position));
 
         SpriteRenderer spriteRender = GetComponent<SpriteRenderer>();
+        bool orientationDidChange = false;
         if (lastRecordedMovementAxis == Vector3.up) {
-             spriteRender.sprite = _snakeTop;
+            orientationDidChange = UpdateSnakeOrientation(SnakeOrientation.Vertical);
+            spriteRender.sprite = _snakeTop;
         } else if (lastRecordedMovementAxis == Vector3.down) {
+            orientationDidChange = UpdateSnakeOrientation(SnakeOrientation.Vertical);
             spriteRender.sprite = _snakeBottom;
         } else if (lastRecordedMovementAxis == Vector3.left) {
+            orientationDidChange = UpdateSnakeOrientation(SnakeOrientation.Horizontal);
             spriteRender.sprite = _snakeLeft;
         } else if (lastRecordedMovementAxis == Vector3.right) {
+            orientationDidChange = UpdateSnakeOrientation(SnakeOrientation.Horizontal);
             spriteRender.sprite = _snakeRight;
         }
 
         if (nextBodyPart != null) {
-            nextBodyPart.MoveTo(lastPosition);
+            nextBodyPart.MoveTo(lastPosition, transform.position, orientationDidChange);
         }
+    }
+
+    public bool UpdateSnakeOrientation(SnakeOrientation currentSnakeOrientation) {
+        bool orientationDidChange = false;
+        if (currentSnakeOrientation != this.currentHeadOrientation) {
+            orientationDidChange = true;
+            this.currentHeadOrientation = currentSnakeOrientation;
+        }
+
+        return orientationDidChange;
     }
 
     void OnTriggerEnter2D(Collider2D collider) {

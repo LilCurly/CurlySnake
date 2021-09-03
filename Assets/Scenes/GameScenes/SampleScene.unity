@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ff77c18189a4147b39388ff6238e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boardSize: 10
+  _boardSize: 20
   _floor: {fileID: 1316212786797972229, guid: 72315953c72384dbf8a8e9e1e5542e14, type: 3}
   _floorSprites:
   - {fileID: 21300000, guid: 8bae231de8f98445cb4184e64df2f622, type: 3}
