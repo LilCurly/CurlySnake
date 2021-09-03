@@ -40,17 +40,17 @@ Basic UI:
 
   Design:
     ☐ Snake design
-      ☐ Design head
-        ☐ Head direction top
-        ☐ Head direction left
-        ☐ Head direction right
-        ☐ Head direction bottom
+      ✔ Design head @done(21-09-03 22:14)
+        ✔ Head direction top @done(21-09-03 22:14)
+        ✔ Head direction left @done(21-09-03 22:14)
+        ✔ Head direction right @done(21-09-03 22:14)
+        ✔ Head direction bottom @done(21-09-03 22:14)
       ☐ Design bodies
-        ☐ Body variant 1
-          ☐ Direction top
-          ☐ Direction left
-          ☐ Direction right
-          ☐ Direction bottom
+        ✔ Body variant 1 @done(21-09-03 22:14)
+          ✔ Direction top @done(21-09-03 22:14)
+          ✔ Direction left @done(21-09-03 22:14)
+          ✔ Direction right @done(21-09-03 22:14)
+          ✔ Direction bottom @done(21-09-03 22:14)
         ☐ Body variant 2
           ☐ Direction top
           ☐ Direction left
@@ -61,8 +61,8 @@ Basic UI:
           ☐ Direction left
           ☐ Direction right
           ☐ Direction bottom
-    ☐ Terrain design
-      ☐ Create some terrain tilemaps
+    ✔ Terrain design @done(21-09-03 22:14)
+      ✔ Create some terrain tilemaps @done(21-09-03 22:14)
 
   Improvements:
     ✔ Playable grid should take as mush space as it can @done(21-08-26 19:12)
